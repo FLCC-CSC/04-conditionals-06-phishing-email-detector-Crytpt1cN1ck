@@ -1,8 +1,8 @@
 # FILE NAME - phishing_email_detector.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Nicholas Sheppard
+# DATE: 09/30/2025
+# BRIEF DESCRIPTION:  Checks user input for phishing red flags.
 
 
 
@@ -15,14 +15,31 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
+def main():
+    phishing_email_detector()
+
+def phishing_email_detector():
+    subject = input("Enter the email subject line: ")
+    print()
+    print("SECURITY ASSESSMENT:")
+    if "urgent" in subject.lower():
+        print("HIGH RISK: Possible phishing attempt.")
+    elif "immediate action required" in subject.lower():
+        print("HIGH RISK: Possible phishing attempt.")
+    elif "win" in subject.lower():
+        print("MEDIUM RISK: Suspicious offer detected.")
+    elif "free" in subject.lower():
+        print("MEDIUM RISK: Suspicious offer detected.")
+    elif "password reset" in subject.lower():
+        print("LOW RISK: Verify legitimacy with sender.")
+    else:
+        print("No phishing indicators detected.")
+    print("------------------------")
+    print(f"Analyzed subject: \"{subject}\"")
 
 
 
-
-
-
-
-
+main()
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
@@ -78,7 +95,8 @@ Analyzed subject: "Did you request a password reset?"
 
 1. Was using `in` difficult or was it natural?
 
-
+It was natural, but I tried to combine a couple conditions into the same elif using the "or" operator. Unfortunately I wasn't able to get it to
+work so I had to make several elif statements
 
 
 
@@ -97,7 +115,7 @@ Analyzed subject: "Did you request a password reset?"
 Please gauge your utilization of AI on the following spectrum. Place an "X" in front
 of the appropriate response. Only choose one of the following:
 
-[ ] I did not use AI at all for this lab.
+[x] I did not use AI at all for this lab.
 [ ] I wrote the initial draft of the software but had AI help me make it better.
 [ ] I fed the lab description to AI and had it generate a response but I modified it.
 [ ] AI created the entire program for me.
@@ -111,7 +129,7 @@ may impede your understanding. Please rate how well you understand the concepts 
 
 [ ] I understand very little about this lab.
 [ ] I am about 50/50 on this lab; I get parts of it but not the whole picture.
-[ ] I pretty much get it.
+[x] I pretty much get it.
 [ ] I'm solid. Totally got it.
 
 '''
