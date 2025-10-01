@@ -22,9 +22,13 @@ def phishing_email_detector():
     subject = input("Enter the email subject line: ")
     print()
     print("SECURITY ASSESSMENT:")
-    if ("urgent" or "immediate action required") in subject.lower():
+    if "urgent" in subject.lower():
         print("HIGH RISK: Possible phishing attempt.")
-    elif ("win" or "free") in subject.lower():
+    elif "immediate action required" in subject.lower():
+        print("HIGH RISK: Possible phishing attempt.")
+    elif "win" in subject.lower():
+        print("MEDIUM RISK: Suspicious offer detected.")
+    elif "free" in subject.lower():
         print("MEDIUM RISK: Suspicious offer detected.")
     elif "password reset" in subject.lower():
         print("LOW RISK: Verify legitimacy with sender.")
@@ -91,9 +95,8 @@ Analyzed subject: "Did you request a password reset?"
 
 1. Was using `in` difficult or was it natural?
 
-It was natural, but it did take me a minute to realize that I had to put the conditions in
-parenthesis if I was using an 'or' statement. Without the parenthesis, the first if condition
-read as true no matter what I entered for a subject.
+It was natural, but I tried to combine a couple conditions into the same elif using the "or" operator. Unfortunately I wasn't able to get it to
+work so I had to make several elif statements
 
 
 
@@ -126,7 +129,7 @@ may impede your understanding. Please rate how well you understand the concepts 
 
 [ ] I understand very little about this lab.
 [ ] I am about 50/50 on this lab; I get parts of it but not the whole picture.
-[ ] I pretty much get it.
-[x] I'm solid. Totally got it.
+[x] I pretty much get it.
+[ ] I'm solid. Totally got it.
 
 '''
